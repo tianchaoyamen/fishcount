@@ -1,0 +1,51 @@
+# Python & Virtual Environments
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+ENV/
+build/
+dist/
+*.egg-info/
+
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+
+# Media & Raw Video Footage (large files)
+*.mp4
+*.MOV
+*.mov
+*.avi
+*.mkv
+新素材/
+素材/
+output/*.mp4
+output/*.MOV
+分析结果/
+
+# Ultralytics & Model Checkpoints
+runs/
+*.cache
+yolov8n.pt
+yolov8s-world.pt
+
+# Large training dataset dumps (keep scripts and sample labels)
+yolo_dataset/
+yolo_dataset_cpl/
+dataset_trough_head/
+dataset_blackfish/
+dataset_density_all/
+待标注_急流黑鱼10张/
+第二批待补充点标注8张/
+
+# IDE & Editor configs
+.vscode/
+.idea/
+*.swp
+*.swo
