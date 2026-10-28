@@ -1,0 +1,59 @@
+{
+  "version": "3.3.9",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "fish5",
+      "score": null,
+      "points": [
+        [
+          900.0,
+          837.0
+        ],
+        [
+          938.0,
+          901.0
+        ],
+        [
+          976.0,
+          933.0
+        ],
+        [
+          1076.0,
+          969.0
+        ],
+        [
+          1079,
+          930
+        ],
+        [
+          1008.0,
+          903.0
+        ],
+        [
+          950.0,
+          861.0
+        ],
+        [
+          936.0,
+          799.0
+        ],
+        [
+          932.0,
+          855.0
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "difficult": false,
+      "shape_type": "polygon",
+      "flags": {},
+      "attributes": {},
+      "kie_linking": []
+    }
+  ],
+  "imagePath": "frame_027.jpg",
+  "imageData": null,
+  "imageHeight": 1920,
+  "imageWidth": 1080
+}
