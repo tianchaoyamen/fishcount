@@ -12,6 +12,39 @@
 
 ---
 
+## 🎬 实际运行效果展示 (Demo & Showcase)
+
+### 1. 水槽活鱼连续流时空软融合动态跟踪 (Dynamic Demonstration)
+
+> **工况说明**：活鱼运输车卸鱼槽（60fps 高清实测），在无任何物理隔板割伤鱼类的前提下，经历“**急流涌浪叠罗汉 $\to$ 离散细流**”全过程，实时渲染检测框、轨迹线与自适应 HUD 仪表盘。
+
+<p align="center">
+  <img src="assets/demo_spatiotemporal_flow.gif" alt="FishCount Spatio-Temporal Flow Demo" width="85%">
+</p>
+
+### 2. 不同流态核心阶段抓拍截图 (Multi-Stage Snapshots)
+
+| 阶段 1：涌浪初期通量积分 (Regime: Dense Surge) | 阶段 2：涌浪峰值叠罗汉补偿 (Peak Flux & 3D Expansion) |
+| :---: | :---: |
+| ![涌浪初期](assets/demo_stage1_surge_flux.jpg) | ![涌浪峰值](assets/demo_stage2_dense_peak.jpg) |
+| **特征**：瞬时鱼只骤增，系统平滑进入密集通量模式 | **特征**：激烈水花与表下层严重重叠，光流与密度网络补偿 |
+| **阶段 3：软融合自适应过渡 (Smooth Soft-Blending)** | **阶段 4：离散细流几何闭锁追踪 (Sparse & Anti-Dup Lock)** |
+| ![过渡阶段](assets/demo_stage3_transition.jpg) | ![离散追踪](assets/demo_stage4_discrete_tracking.jpg) |
+| **特征**：连续 Sigmoid 变换消除离散状态机抖动 | **特征**：75px 物理排他间距 + 终生闭锁闸门，单鱼长效 ID 追踪 |
+
+### 3. 最新实测基准数据 (Benchmark on IMG_2626, 60fps)
+
+```text
+=== IMG_2626.MOV 全视频时空连续流通量分析报告 ===
+视频时长: 55.47 秒 (3328 帧 @ 60 fps)
+计算工况: Apple Silicon MPS 硬件加速 | 平均速度: 9.2 fps
+人工逐帧真值: 282 条
+算法累计总数: 319 条 (实数积分: 319.32 条，吻合度 86.8%)
+流态分布: ⚡ 密集涌浪期 10.4% (5.8s) | 🟢 离散稀疏期 89.6% (49.7s)
+```
+
+---
+
 ## 🌟 核心特性与应用场景
 
 ### 1. 环形池/U形池自动巡游计数与转向判定 (Pond Circulation Monitoring)
@@ -68,6 +101,13 @@ fishcount/
 │   ├── fish_density_full211.pth
 │   ├── trough_head_best.pt
 │   └── pond_manual_best.pt
+│
+├── assets/                        # 效果演示动图与核心阶段抓拍截图
+│   ├── demo_spatiotemporal_flow.gif
+│   ├── demo_stage1_surge_flux.jpg
+│   ├── demo_stage2_dense_peak.jpg
+│   ├── demo_stage3_transition.jpg
+│   └── demo_stage4_discrete_tracking.jpg
 │
 ├── requirements.txt               # 运行依赖项清单
 ├── LICENSE                        # MIT 开源许可证
